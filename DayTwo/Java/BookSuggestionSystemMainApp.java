@@ -78,12 +78,12 @@ public class BookSuggestionSystemMainApp{
             case 5:
                 System.out.println("All Books");
                 
-                ArrayList<String> items = bookSuggestion.showBooks();
-                    
-                for(String item : items){
+                ArrayList<String> books = bookSuggestion.showBooks();
+                int count = 1;
+                for(String book : books){
                 
-                    System.out.printf("%s%n", item);
-                
+                    System.out.printf("%d. %s%n", count,book);
+                    count++;
                 }
 
         }
