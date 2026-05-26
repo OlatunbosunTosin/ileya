@@ -74,7 +74,7 @@ public class BookSuggestionSystemMainApp{
                 String newBookTitle = inputCollector.next();
                 bookSuggestion.updateBooks(oldBookTitle, newBookTitle);
                 System.out.println("Book updated successfully!");
-                
+                break;
             case 5:
                 System.out.println("All Books");
                 
@@ -85,6 +85,7 @@ public class BookSuggestionSystemMainApp{
                     System.out.printf("%d. %s%n", count,book);
                     count++;
                 }
+                break;
 
         }
     
