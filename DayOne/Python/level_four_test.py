@@ -1,9 +1,9 @@
 import unittest
 import level_four
 
-class TestForLevelTwoFunctions(unittest.TestCase):
+class TestForLevelFourFunctions(unittest.TestCase):
 
-    def test_that_reoccuring_numbers_in_list_is_returned(self):
+    def test_that_indices_of_numbers_that_sum_target_number_is_returned(self):
     
         original_list = [2, 7, 11, 15]
         expected_list = level_four.get_indices_of_target_sum_numbers(original_list, 9)
