@@ -1,24 +1,31 @@
 def ceaser_cipher_encryption(message, shift_key):
 
     encrypted_message = ""
-    alphabets = ""
+    capital_alphabets = ""
+    lower_alphabets = ""
+    
     for number in range(65,91):
 
-        alphabets += chr(number)  
+        capital_alphabets += chr(number)  
         
     for integer in range(97,123):
 
-        alphabets += chr(integer) 
+        lower_alphabets += chr(integer) 
         
 
     for letter in message:
 
-        for character in alphabets:
+        for capital_character in capital_alphabets:
         
-            if letter.isalpha() and letter == character:
+            if letter.isalpha() and letter == capital_character:
             
-                encrypted_message += alphabets[((alphabets.index(character) + shift_key) % 52)]
-             
+                encrypted_message += capital_alphabets[((capital_alphabets.index(capital_character) + shift_key) % 26)]
+           
+        for lower_character in lower_alphabets:
+        
+            if letter.isalpha() and letter == lower_character:
+            
+                encrypted_message += lower_alphabets[((lower_alphabets.index(lower_character) + shift_key) % 26)]  
         if not letter.isalpha():
                 encrypted_message += letter
                 
@@ -29,22 +36,30 @@ def ceaser_cipher_encryption(message, shift_key):
 def ceaser_cipher_decryption(encrypted_message, shift_key):
 
     decrypted_message = ""
-    alphabets = ""
+    capital_alphabets = ""
+    lower_alphabets = ""
+    
     for number in range(65,91):
 
-        alphabets += chr(number)
+        capital_alphabets += chr(number)
         
     for integer in range(97,123):
 
-        alphabets += chr(integer)  
+        lower_alphabets += chr(integer)  
 
     for letter in encrypted_message:
 
-        for character in alphabets:
+        for capital_character in capital_alphabets:
         
-            if letter.isalpha() and letter == character:
+            if letter.isalpha() and letter == capital_character:
             
-                decrypted_message += alphabets[((alphabets.index(character) - shift_key) % 52)]
+                decrypted_message += capital_alphabets[((capital_alphabets.index(capital_character) - shift_key) % 26)]
+                
+        for lower_character in lower_alphabets:
+        
+            if letter.isalpha() and letter == lower_character:
+            
+                decrypted_message += lower_alphabets[((lower_alphabets.index(lower_character) - shift_key) % 26)] 
              
         if not letter.isalpha():
                 decrypted_message += letter
