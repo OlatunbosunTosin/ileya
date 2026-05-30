@@ -14,14 +14,14 @@ test("test that card number is not valid", () => {
 
 })
 
-test("test that card number length", () => {
+test("test for card number length", () => {
 
     cardNumber = "5399831619690404"
     expect(creditCardLength(cardNumber)).toBe(16)
 
 })
 
-test("test that card type", () => {
+test("test for card type", () => {
 
     cardNumber = "5399831619690403"
     expect(creditCardType(cardNumber)).toBe("Mastercard")
