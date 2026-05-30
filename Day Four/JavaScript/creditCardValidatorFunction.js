@@ -64,7 +64,6 @@ function creditCardLength(cardNumber){
 
 function creditCardType(cardNumber){
 
-    validityStatus = creditCardValidator(cardNumber)
     cardType = "";
     
     
