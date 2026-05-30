@@ -54,9 +54,7 @@ def credit_card_length(card_number):
 
 def credit_card_type(card_number):
 
-    validity_status = credit_card_validator(card_number)
     card_type = ""
-    
     
     if card_number[0] == "4":
         card_type = "Visa card"
