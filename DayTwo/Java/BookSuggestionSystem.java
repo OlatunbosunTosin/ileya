@@ -1,16 +1,26 @@
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.List;
 public class BookSuggestionSystem{
 
-    ArrayList<String> listOfBooks = new ArrayList<String>(List.of("The Hobbit", "The Mystery", "Animal Farm", "Brave kingdom"));
+    public ArrayList<String> getListOfBooks(){
+    
+        ArrayList<String> listOfBooks = new ArrayList<String>();
+        listOfBooks.add("The Hobbit");
+        listOfBooks.add("The Mystery");
+        listOfBooks.add("Animal Farm");
+        listOfBooks.add("Brave kingdom");
+        
+        return listOfBooks;
+    }
+    
+    ArrayList<String> bookList = getListOfBooks();
     
     Random generator = new Random();
 
     public String getBookSuggestion(){
 
-        int index = generator.nextInt(listOfBooks.size());
-        return listOfBooks.get(index);
+        int index = generator.nextInt(bookList.size());
+        return bookList.get(index);
         
     }
 
@@ -22,39 +32,39 @@ public class BookSuggestionSystem{
         
     public ArrayList<String> addNewBooks(String bookName){
 
-        listOfBooks.add(bookName);
-        return listOfBooks;
+        bookList.add(bookName);
+        return bookList;
 
     }
 
     public ArrayList<String> removeBooks(String bookName){
         
-        if (listOfBooks.contains(bookName)){
+        if (bookList.contains(bookName)){
         
-            listOfBooks.remove(bookName);
+            bookList.remove(bookName);
             
-        } return listOfBooks;   
+        } return bookList;   
     }
 
 
     public ArrayList<String> updateBooks(String oldBookName, String newBookName){
 
-        for(int index = 0; index < listOfBooks.size(); index++){
+        for(int index = 0; index < bookList.size(); index++){
             
-            if (listOfBooks.get(index).equals(oldBookName)){
+            if (bookList.get(index).equals(oldBookName)){
             
-                listOfBooks.remove(index);
-                listOfBooks.add(index, newBookName);
+                bookList.remove(index);
+                bookList.add(index, newBookName);
             
             }
             
-        }return listOfBooks;
+        }return bookList;
 
     }
 
     public ArrayList<String> showBooks(){
 
-        return listOfBooks;
+        return bookList;
     
     }
 

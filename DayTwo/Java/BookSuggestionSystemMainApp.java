@@ -59,19 +59,23 @@ public class BookSuggestionSystemMainApp{
                 break;
                 
             case 3: 
-                
+            
+                inputCollector.nextLine();
                 System.out.print("Enter book title: ");
-                String nameOfBook = inputCollector.next();
+                String nameOfBook = inputCollector.nextLine();
                 bookSuggestion.removeBooks(nameOfBook);
                 System.out.println("Book removed successfully!");
                 break;
                 
             case 4:
-
-                System.out.println("Enter the old book title: ");
-                String oldBookTitle = inputCollector.next();
-                System.out.println("Enter the new book title: ");
-                String newBookTitle = inputCollector.next();
+            
+                inputCollector.nextLine();
+                System.out.print("Enter the old book title: ");
+                String oldBookTitle = inputCollector.nextLine();
+                
+                System.out.print("Enter the new book title: ");
+                String newBookTitle = inputCollector.nextLine();
+                
                 bookSuggestion.updateBooks(oldBookTitle, newBookTitle);
                 System.out.println("Book updated successfully!");
                 break;
@@ -95,20 +99,6 @@ public class BookSuggestionSystemMainApp{
     
     
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
